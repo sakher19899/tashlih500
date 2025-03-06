@@ -1,0 +1,510 @@
+"use client"
+
+import Image from "next/image"
+import { Phone, MessageCircle, Car, CheckCircle, MapPin, DollarSign, Clock, Shield } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+
+export default function Home() {
+  const phoneNumber = "0570909314"
+
+  return (
+    <div className="flex min-h-screen flex-col bg-white">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+        <div className="container flex h-16 items-center justify-between">
+          <div className="flex items-center gap-2 font-bold text-xl text-primary">
+            <Car className="h-6 w-6" />
+            <span>شريطي سيارات</span>
+          </div>
+          <Button
+            variant="outline"
+            size="sm"
+            className="gap-1 text-sm"
+            onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+          >
+            <Phone className="h-4 w-4" />
+            {phoneNumber}
+          </Button>
+        </div>
+      </header>
+
+      {/* Floating Contact Bar (Desktop) */}
+      <div className="hidden md:flex fixed top-20 left-4 z-40 flex-col gap-3">
+        <Button
+          size="icon"
+          className="h-12 w-12 rounded-full shadow-lg bg-primary hover:bg-primary/90"
+          onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+        >
+          <Phone className="h-5 w-5 text-white" />
+        </Button>
+        <Button
+          size="icon"
+          className="h-12 w-12 rounded-full shadow-lg bg-green-600 hover:bg-green-700"
+          onClick={() => (window.location.href = `https://wa.me/${phoneNumber}`)}
+        >
+          <MessageCircle className="h-5 w-5 text-white" />
+        </Button>
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.58.14%20-%20A%20professional%20and%20visually%20appealing%20image%20showing%20a%20junk%20car%20being%20assessed%20by%20a%20buyer%20in%20Saudi%20Arabia.%20The%20scene%20should%20include%20a%20salvage%20yard%20fill-yOXGrv5bAZ83CXxc6FacwI9MlN0IPZ.webp"
+            alt="شراء سيارات تشليح"
+            fill
+            sizes="100vw"
+            className="object-cover brightness-[0.4]"
+            priority
+          />
+        </div>
+        <div className="container relative z-10 py-12 md:py-24 text-white">
+          <div className="max-w-3xl space-y-4 text-right">
+            <div className="inline-block bg-secondary/90 px-3 py-2 md:px-4 md:py-2 rounded-lg mb-2">
+              <h1 className="text-2xl md:text-5xl font-bold">شراء سيارات تشليح بالرياض</h1>
+            </div>
+            <p className="text-base md:text-xl opacity-90">
+              نشتري السيارات المصدومة والتالفة بأفضل الأسعار مع نقل الملكية فوراً
+            </p>
+            <div className="bg-white/10 backdrop-blur-sm p-3 md:p-4 rounded-lg border border-white/20">
+              <p className="text-lg md:text-xl font-bold">🚗💰 نشتري سيارتك التشليح بأعلى سعر! 💰🚗</p>
+              <p className="mt-2 text-sm md:text-base">هل تمتلك سيارة تشليح أو حادثة أو غير قابلة للإصلاح؟ 🤔 لا تقلق، نحن هنا لمساعدتك!</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 pt-4">
+              <Button
+                size="lg"
+                className="gap-2 text-base md:text-lg bg-primary hover:bg-primary/90 w-full sm:w-auto"
+                onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+              >
+                <Phone className="h-5 w-5" />
+                اتصل الآن
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2 text-base md:text-lg border-white text-white bg-green-600/80 hover:bg-white hover:text-green-600 w-full sm:w-auto"
+                onClick={() => (window.location.href = `https://wa.me/${phoneNumber}`)}
+              >
+                <MessageCircle className="h-5 w-5 text-white" />
+                <span className="text-white">واتساب</span>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-12 bg-gradient-to-b from-slate-50 to-white">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary">خدماتنا</h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-2 mb-4 rounded-full"></div>
+            <p className="text-muted-foreground mt-2">نشتري جميع أنواع السيارات المصدومة والتالفة</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Card className="text-right border-t-4 border-t-primary shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="pt-6">
+                <div className="mb-4 flex justify-end">
+                  <div className="p-3 rounded-full bg-primary/10 text-primary">
+                    <DollarSign className="h-7 w-7" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold">أفضل سعر</h3>
+                <p className="text-muted-foreground mt-2">نقدم أعلى سعر لشراء السيارات المصدومة والتشليح في الرياض</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-right border-t-4 border-t-secondary shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="pt-6">
+                <div className="mb-4 flex justify-end">
+                  <div className="p-3 rounded-full bg-secondary/10 text-secondary">
+                    <Clock className="h-7 w-7" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold">خدمة فورية</h3>
+                <p className="text-muted-foreground mt-2">نصلك أينما كنت في الرياض ونشتري سيارتك فوراً مع الدفع كاش</p>
+              </CardContent>
+            </Card>
+
+            <Card className="text-right border-t-4 border-t-primary shadow-lg hover:shadow-xl transition-all">
+              <CardContent className="pt-6">
+                <div className="mb-4 flex justify-end">
+                  <div className="p-3 rounded-full bg-primary/10 text-primary">
+                    <Shield className="h-7 w-7" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold">نقل الملكية</h3>
+                <p className="text-muted-foreground mt-2">نقوم بإنهاء جميع إجراءات نقل الملكية بسرعة وسهولة</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* 3-Step Process Section */}
+      <section className="py-12 bg-primary/5">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-primary">خدمة مميزة وسريعة في 3 خطوات فقط!</h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-2 mb-4 rounded-full"></div>
+            <p className="text-muted-foreground mt-2">عملية بيع سهلة وسريعة</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-lg text-right relative">
+              <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                1
+              </div>
+              <h3 className="text-xl font-bold mb-3">التواصل معنا</h3>
+              <p className="text-muted-foreground">اتصل بنا أو أرسل رسالة عبر واتساب لتحديد موعد الفحص والتقييم.</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg text-right relative">
+              <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                2
+              </div>
+              <h3 className="text-xl font-bold mb-3">التقييم والعرض</h3>
+              <p className="text-muted-foreground">يقوم فريقنا بفحص السيارة وتقديم عرض سعر مناسب خلال دقائق!</p>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-lg text-right relative">
+              <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xl">
+                3
+              </div>
+              <h3 className="text-xl font-bold mb-3">الدفع الفوري والاستلام</h3>
+              <p className="text-muted-foreground">بمجرد الاتفاق، نقوم بالدفع فورًا وسحب السيارة دون أي تكلفة عليك!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-12 bg-white">
+        <div className="container">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold text-primary">لماذا نحن الخيار الأفضل؟</h2>
+            <div className="h-1 w-20 bg-secondary mx-auto mt-2 mb-4 rounded-full"></div>
+            <p className="text-muted-foreground mt-2">أفضل شريطي سيارات في الرياض</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-right">
+            <div className="flex items-start gap-3 bg-primary/5 p-4 rounded-lg">
+              <div className="mt-1">
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+              </div>
+              <div>
+                <p className="font-medium">شراء جميع أنواع السيارات</p>
+                <p className="text-sm text-muted-foreground">
+                  نشتري السيارات التالفة، المحروقة، الغارقة، بدون استمارة، بدون تأمين، أو حتى المعطلة تمامًا!
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 bg-primary/5 p-4 rounded-lg">
+              <div className="mt-1">
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+              </div>
+              <div>
+                <p className="font-medium">تقييم مجاني وسعر تنافسي</p>
+                <p className="text-sm text-muted-foreground">نقدم لك أفضل سعر في السوق بناءً على حالة السيارة.</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 bg-primary/5 p-4 rounded-lg">
+              <div className="mt-1">
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+              </div>
+              <div>
+                <p className="font-medium">دفع فوري كاش 💵</p>
+                <p className="text-sm text-muted-foreground">
+                  لا نؤجل الدفع! بمجرد الاتفاق، تحصل على المبلغ فورًا دون أي تأخير.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 bg-primary/5 p-4 rounded-lg">
+              <div className="mt-1">
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+              </div>
+              <div>
+                <p className="font-medium">نقل السيارة مجانًا 🚛</p>
+                <p className="text-sm text-muted-foreground">
+                  لا داعي للقلق بشأن السحب أو النقل، فريقنا يتولى الأمر بالكامل مجانًا!
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 bg-primary/5 p-4 rounded-lg">
+              <div className="mt-1">
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+              </div>
+              <div>
+                <p className="font-medium">نتعامل مع جميع المدن والمناطق في المملكة</p>
+                <p className="text-sm text-muted-foreground">أينما كنت، نحن نصل إليك!</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3 bg-primary/5 p-4 rounded-lg">
+              <div className="mt-1">
+                <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0" />
+              </div>
+              <div>
+                <p className="font-medium">إجراءات سريعة وسهلة</p>
+                <p className="text-sm text-muted-foreground">نوفر لك تجربة بيع بلا تعقيدات ولا أوراق مرهقة!</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 bg-secondary/10 p-4 md:p-6 rounded-xl text-right">
+            <p className="text-lg md:text-xl font-bold mb-3">🚗💰 نشتري سيارتك التشليح بأفضل سعر! خدمة سريعة وسهلة! 💰🚗</p>
+            <p className="mb-4 text-sm md:text-base">
+              هل لديك سيارة تشليح، حادثة، قديمة، أو غير قابلة للاستخدام وتبحث عن طريقة سريعة ومريحة لبيعها؟ 🤔 لا تبحث
+              أكثر، نحن الحل الأمثل لك!
+            </p>
+            <div className="flex flex-col sm:flex-row justify-end gap-3 mt-4">
+              <Button className="gap-2 w-full sm:w-auto" onClick={() => (window.location.href = `tel:${phoneNumber}`)}>
+                <Phone className="h-4 w-4" />
+                اتصل الآن
+              </Button>
+              <Button
+                variant="outline"
+                className="gap-2 border-primary bg-green-600 text-white hover:bg-white hover:text-green-600 hover:border-green-600 w-full sm:w-auto"
+                onClick={() => (window.location.href = `https://wa.me/${phoneNumber}`)}
+              >
+                <MessageCircle className="h-4 w-4" />
+                واتساب
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-12 bg-slate-50">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold">خدماتنا المتميزة</h2>
+            <p className="text-muted-foreground mt-2">نشتري جميع أنواع السيارات المصدومة</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.52.06%20-%20A%20professional%20advertisement-style%20image%20for%20a%20junk%20car%20buying%20service%20in%20Saudi%20Arabia.%20The%20image%20should%20feature%20a%20wrecked%20car%20being%20loaded%20onto%20a%20tow-Ht0zw6SbFPQqihqM5Nq7m4iN42f4wC.webp"
+                alt="خدمة سحب السيارات"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.53.49%20-%20A%20professional%20advertisement%20image%20for%20a%20junk%20car%20buying%20service%20in%20Saudi%20Arabia.%20The%20image%20should%20feature%20a%20damaged%20car%20being%20towed%20onto%20a%20flatbed%20tr-e0I48TrMee1aNb9HlTJNuYVnl6V2xF.webp"
+                alt="شراء السيارات المصدومة"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.52.51%20-%20A%20realistic%20and%20detailed%20image%20of%20a%20salvage%20yard%20in%20Saudi%20Arabia%20with%20a%20tow%20truck%20actively%20removing%20a%20wrecked%20car.%20The%20scene%20should%20showcase%20multiple%20-ggKD9EB8fQAgsnGe3hvPvwA5uy7EDL.webp"
+                alt="ساحة سيارات التشليح"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.58.12%20-%20A%20high-quality%20advertisement%20image%20for%20a%20junk%20car%20removal%20service%20in%20Saudi%20Arabia.%20The%20image%20should%20feature%20a%20damaged%20car%20being%20lifted%20onto%20a%20tow%20truc-uOALNKJxgunRoHoQcrrmP2JtnKRfsH.webp"
+                alt="رفع السيارات التالفة"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.58.19%20-%20A%20high-quality%20promotional%20image%20of%20a%20junk%20car%20removal%20process%20in%20Saudi%20Arabia.%20The%20image%20should%20depict%20a%20customer%20handing%20over%20car%20keys%20to%20a%20professi-Blhe7FfRWWMNcdsfBost4aT3fNlrE7.webp"
+                alt="شراء السيارات كاش"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.52.23%20-%20A%20visually%20appealing%20image%20showcasing%20a%20junk%20car%20being%20appraised%20by%20a%20professional%20buyer%20in%20Saudi%20Arabia.%20The%20scene%20should%20include%20a%20salvage%20yard%20with-jbHNHVIuctHgyeqgXze3425OSRYLKj.webp"
+                alt="تقييم السيارات المصدومة"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md sm:col-span-2 lg:col-span-2">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.52.35%20-%20A%20high-quality%20image%20depicting%20a%20junk%20car%20being%20lifted%20onto%20a%20tow%20truck%20in%20a%20professional%20salvage%20yard%20in%20Saudi%20Arabia.%20The%20setting%20includes%20several%20w-I8qHJbfFcdB2mC9HZaHKx9vGlsQjaF.webp"
+                alt="خدمة متكاملة لشراء السيارات"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 66vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-md sm:col-span-2 lg:col-span-1">
+              <Image 
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DALL%C2%B7E%202025-03-06%2019.58.17%20-%20A%20realistic%20and%20clean%20advertisement%20image%20of%20a%20junk%20car%20being%20towed%20away%20in%20Saudi%20Arabia.%20The%20scene%20should%20feature%20a%20professional%20salvage%20yard%20with%20mu-31MoKd1Lo36N3DuNkbUI0vHSDj8Tbu.webp"
+                alt="ساحة سيارات احترافية"
+                fill 
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 33vw"
+                className="object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12">
+        <div className="container">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold">الأسئلة الشائعة</h2>
+            <p className="text-muted-foreground mt-2">إجابات على استفساراتكم</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-right">
+            {[
+              {
+                q: "أريد بيع سيارتي تشليح",
+                a: "يمكنك التواصل معنا عبر الهاتف أو الواتساب وسنقوم بتقييم سيارتك وتقديم أفضل سعر لها.",
+              },
+              {
+                q: "كيف أبيع سيارة تشليح؟",
+                a: "اتصل بنا وأرسل صور للسيارة، سنقدم لك عرض سعر، وعند الموافقة نأتي لموقعك ونتمم عملية الشراء مع الدفع كاش.",
+              },
+              {
+                q: "أماكن شراء السيارات التشليح بالرياض",
+                a: "نحن نغطي جميع مناطق الرياض ونصل إليك أينما كنت لشراء سيارتك المصدومة أو التالفة.",
+              },
+              {
+                q: "كم سعر سيارتي التشليح؟",
+                a: "يعتمد السعر على نوع السيارة وموديلها وحالتها، اتصل بنا وسنقدم لك تقييم مجاني وعادل.",
+              },
+              {
+                q: "سيارتي فيها حادث وأريد بيعها",
+                a: "نشتري السيارات المصدومة مهما كانت حالتها، تواصل معنا وسنقدم لك أفضل سعر.",
+              },
+              {
+                q: "بيع سيارات تشليح مع نقل الملكية",
+                a: "نقوم بإنهاء جميع إجراءات نقل الملكية بسرعة وسهولة دون أي عناء عليك.",
+              },
+            ].map((faq, index) => (
+              <div key={index} className="space-y-2">
+                <h3 className="text-lg font-bold">{faq.q}</h3>
+                <p className="text-muted-foreground">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-12 bg-gradient-to-r from-primary to-primary-dark text-white">
+        <div className="container">
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold">تواصل معنا الآن</h2>
+            <div className="h-1 w-20 bg-white mx-auto mt-2 mb-4 rounded-full"></div>
+            <p className="mt-2 opacity-90">نحن جاهزون لشراء سيارتك بأفضل سعر</p>
+          </div>
+
+          <div className="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-4 md:p-6 rounded-xl border border-white/20">
+            <p className="text-center mb-4 text-base md:text-lg">🚀 لا تضيع وقتك، بيع سيارتك اليوم بأفضل سعر! 🚀</p>
+
+            <div className="flex flex-col gap-3 md:gap-4">
+              <Button
+                size="lg"
+                variant="secondary"
+                className="gap-2 text-base md:text-lg w-full"
+                onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+              >
+                <Phone className="h-5 w-5" />
+                {phoneNumber}
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="gap-2 text-base md:text-lg w-full border-white text-white bg-green-600/80 hover:bg-white hover:text-green-600"
+                onClick={() => (window.location.href = `https://wa.me/${phoneNumber}`)}
+              >
+                <MessageCircle className="h-5 w-5" />
+                <span className="text-white">واتساب</span>
+              </Button>
+            </div>
+
+            <div className="mt-4 md:mt-6 flex justify-center">
+              <div className="flex items-center gap-2 text-center">
+                <MapPin className="h-5 w-5" />
+                <span className="text-sm md:text-base">نخدم جميع مدن المملكة العربية السعودية</span>
+              </div>
+            </div>
+
+            <div className="mt-3 md:mt-4 text-center">
+              <p className="text-sm md:text-base">✅ خدمة مضمونة ✅ رضا العميل أولويتنا ✅ أسرع استجابة في السوق</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Keywords Section (hidden visually but good for SEO) */}
+      <section className="py-8 bg-slate-100 text-xs text-slate-600">
+        <div className="container text-center">
+          <p className="mb-2">الكلمات المفتاحية</p>
+          <div className="flex flex-wrap justify-center gap-2">
+            {[
+              "شراء سيارات تشليح بالرياض",
+              "نشتري السيارات المصدومة بالرياض",
+              "بيع سيارة تشليح مع نقل الملكية",
+              "أفضل سعر لشراء سيارات التشليح",
+              "شريطي سيارات تشليح يدفع كاش",
+              "بيع سيارة مصدومة بسعر جيد",
+              "أفضل مشتري سيارات تشليح في الرياض",
+              "أعلى سعر لشراء السيارات المصدومة",
+              "أسرع طريقة لبيع سيارة تالفة",
+            ].map((keyword, index) => (
+              <span key={index} className="bg-white px-2 py-1 rounded-full">
+                {keyword}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 bg-slate-900 text-white">
+        <div className="container text-center">
+          <p>© {new Date().getFullYear()} شريطي سيارات - جميع الحقوق محفوظة</p>
+        </div>
+      </footer>
+
+      {/* Floating Contact Buttons (Mobile) */}
+      <div className="fixed bottom-4 left-4 z-50 flex gap-3 md:hidden">
+        <Button
+          size="icon"
+          className="h-16 w-16 rounded-full shadow-xl bg-primary hover:bg-primary/90 animate-pulse"
+          onClick={() => (window.location.href = `tel:${phoneNumber}`)}
+        >
+          <Phone className="h-7 w-7 text-white" />
+        </Button>
+        <Button
+          size="icon"
+          className="h-16 w-16 rounded-full shadow-xl bg-green-600 hover:bg-green-700 text-white animate-pulse border-2 border-white"
+          onClick={() => (window.location.href = `https://wa.me/${phoneNumber}`)}
+        >
+          <MessageCircle className="h-7 w-7 text-white" />
+        </Button>
+      </div>
+    </div>
+  )
+}
