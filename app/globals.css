@@ -102,19 +102,19 @@
   .image-gallery img:hover {
     transform: scale(1.05);
   }
-  
+
   /* Improve touch targets on mobile */
   .touch-target {
     @apply min-h-[44px] min-w-[44px];
   }
-  
+
   /* Optimize image loading on mobile */
   @media (max-width: 640px) {
     .image-lazy {
       content-visibility: auto;
     }
   }
-  
+
   /* Ensure buttons are large enough on mobile */
   @media (max-width: 640px) {
     .btn-mobile-friendly {
@@ -127,7 +127,7 @@
   .container {
     @apply px-4 md:px-6;
   }
-  
+
   .text-balance {
     text-wrap: balance;
   }
